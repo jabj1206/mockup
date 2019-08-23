@@ -75,10 +75,10 @@ wishList = () => {
       <>
         <Container>
           <Row>
-            <Col sm={3}>
+            <Col xs={3}>
               <Sidebar />
             </Col>
-            <Col sm={9}>
+            <Col xs={9}>
             <div className='menuWrapper text-align'>
                     <div className='menu active' id='home' onClick={this.home}>
                         <div className='icons'><i className="fa fa-home" /></div>

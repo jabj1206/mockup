@@ -12,13 +12,13 @@ export default class Menu extends Component {
 
             <br />
             <Row>
-                <Col className='text-right' >
+                <Col xs={12} className='text-right' >
                     <input className='text-center' style={{ border: 'none', borderRadius: '10px' }} placeholder='Search' />
                 </Col>
             </Row>
 
             <Row>
-                <Col>
+                <Col xs={12}>
                     <Departures depar={this.props.depar} deleteD={this.props.deleteD} />
                 </Col>
             </Row>
