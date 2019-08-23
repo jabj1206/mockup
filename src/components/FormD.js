@@ -59,7 +59,7 @@ export default class FormD extends Component {
       return (
          <>
             <div className='add' onClick={this.handleShow}>
-               <i className="addp fa fa-plus"></i>
+               <i className="addp fa fa-plus" style={{fontSize: '50px'}}></i>
             </div>
 
             <Modal show={this.state.show} onHide={this.handleClose}>
