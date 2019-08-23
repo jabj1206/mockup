@@ -4,9 +4,9 @@ import Filters from './Filters'
 export default class Sidebar extends Component {
     render() {
         return (
-            <div className='text-center' style={{ color: 'gray' }}>
-                <img src='https://raw.githubusercontent.com/kristerkari/react-native-svg-transformer/HEAD/images/react-native-logo.png'
-                    style={{ width: '100px' }} />
+            <div className='text-center' style={{ color: 'gray',marginTop:'30px' }}>
+                <img src='https://abeon-hosting.com/images/react-js-png-10.png'
+                    alt=' 'style={{ width: '100px' }} />
 
                 <div style={{ marginTop: '60px', display: 'flex' }}>
                     <i className="fa fa-lightbulb-o" />

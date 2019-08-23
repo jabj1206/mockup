@@ -5,7 +5,7 @@ export default class Departures extends Component {
     
     render(){
         
-        return this.props.depar.map((departure,i)=> <Departure departure={departure} key={i}/>)
+        return this.props.depar.map((departure,i)=> <Departure departure={departure} deleteD={this.props.deleteD} key={i} />)
         
 
     }

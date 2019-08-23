@@ -1,36 +1,68 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Container } from 'react-bootstrap';
-import { Navbar } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
-import { Modal } from 'react-bootstrap';
-import { Button } from 'react-bootstrap';
 import Menu from './components/Menu';
-import Departures from './components/Departures';
 import Sidebar from './components/Sidebar'
 import FormD from './components/FormD'
+
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
       show: false,
-      depar: depar
+      depar: depar,
+      menu: {
+        home:true,
+        msg: false,
+        wish: false
+      }
     }
    
   }
 
-addD=(date,origin,destiny,price)=>{
+addD=(date,origin,destiny,price, quantity)=>{
   const newD = {
     date: date,
     origin: origin,
     destiny: destiny,
-    price: price
+    price: price,
+    quantity: quantity,
+    id: this.state.depar.length
+
   }
   this.setState({
     depar: [...this.state.depar, newD]
   })
+}
+
+deleteD= (id) =>{
+  const deleteD = this.state.depar.filter(d => d.id !== id)
+  this.setState({depar: deleteD})
+}
+
+msg = () =>{
+  let menu= {home:false, msg:true, wish: false}
+  this.setState({
+    menu: {...menu}
+  })
+}
+
+home = () =>{
+  let menu= {home:true, msg:false, wish: false}
+  this.setState({
+    menu: {...menu}
+  })
+}
+
+wishList = () => {
+  let menu= {home:false, msg:false, wish: true}
+  this.setState({
+    menu: {...menu}
+  })
+
 }
   
   onChange = e => {
@@ -47,18 +79,32 @@ addD=(date,origin,destiny,price)=>{
               <Sidebar />
             </Col>
             <Col sm={9}>
-              <Menu />
+            <div className='menuWrapper text-align'>
+                    <div className='menu active' id='home' onClick={this.home}>
+                        <div className='icons'><i className="fa fa-home" /></div>
+                        Home
+                </div>
+                    <div className='menu' id='msg' onClick={this.msg}>
+                        <div className='icons'><i className="fa fa-envelope-o"></i></div>
+                        Messages
+                </div>
+                    <div className='menu' onClick={this.wishList}>
+                        <div className='icons'><i className="fa fa-star"></i></div>
+                        WishList
+                </div>
+                    <div className='menu'>
+                        <div className='icons text-justify'><i className="fa fa-cog"></i></div>
+                        Settings
+                </div>
+                    <div className='menu'>
+                        <div className='icons'><i className="fa fa-user"></i></div>
+                        My Account
+                </div>
+                </div>
+              <Menu depar={this.state.depar} menu={this.state.menu} deleteD = {this.deleteD}/>
               <br />
-              <Row>
-                <Col className='text-right' >
-                  <input className='text-center' style={{ border: 'none', borderRadius: '10px' }} placeholder='Search' />
-                </Col>
-              </Row>
-              <Row>
-                <Col>
-                  <Departures depar={this.state.depar} />
-                </Col>
-              </Row>
+
+              
             </Col>
 
           </Row>
@@ -70,23 +116,18 @@ addD=(date,origin,destiny,price)=>{
 }
 
 const depar = [{
-  date: '01-01-2009',
+  id: '0',
+  date: '2019-01-01',
   origin: 'Houston',
   destiny: 'Texas',
   price: '250000',
   quantity: '1'
 },
 {
-  date: '01-01-2009',
+  id: '1',
+  date: '2019-01-01',
   origin: 'Houston',
   destiny: 'Texas',
-  price: '250000',
-  quantity: '1'
-},
-{
-  date: '01-01-2009',
-  origin: 'Houston',
-  destiny: 'Colombia',
   price: '250000',
   quantity: '1'
 }]

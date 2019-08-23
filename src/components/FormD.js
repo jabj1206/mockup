@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { Modal } from 'react-bootstrap';
 import { Button } from 'react-bootstrap'
+import NumberFormat from 'react-number-format';
+
+
+
 
 export default class FormD extends Component {
    constructor(props) {
@@ -10,9 +14,20 @@ export default class FormD extends Component {
          date: '',
          origin: '',
          destiny: '',
-         price: ''
+         price: '',
+         quantity: ''
       }
    }
+
+   toCurrency = (number) => {
+      const formatter = new Intl.NumberFormat("sv-SE", {
+         style: "decimal",
+         currency: "SEK"
+      });
+
+      return formatter.format(number);
+   }
+
    handleShow = () => {
       this.setState({
          show: true
@@ -20,12 +35,12 @@ export default class FormD extends Component {
    }
 
    handleClose = () => {
-      
+
       this.setState({ show: false })
    };
 
-   onSubmit = e =>{
-      this.props.addD(this.state.date,this.state.origin,this.state.destiny,this.state.price)
+   onSubmit = e => {
+      this.props.addD(this.state.date, this.state.origin, this.state.destiny, this.state.price, this.state.quantity)
       e.preventDefault()
       this.handleClose()
    }
@@ -33,16 +48,18 @@ export default class FormD extends Component {
    onChange = e => {
       console.log(e.target.name, e.target.value)
       this.setState({
-         [e.target.name] : e.target.value
+         [e.target.name]: e.target.value
       })
-     
+
+
+
    }
    render() {
 
       return (
          <>
             <div className='add' onClick={this.handleShow}>
-            <i class="addp fa fa-plus"></i>
+               <i className="addp fa fa-plus"></i>
             </div>
 
             <Modal show={this.state.show} onHide={this.handleClose}>
@@ -56,6 +73,8 @@ export default class FormD extends Component {
                         onChange={this.onChange}
                         name='date'
                         style={styleForm}
+                        required
+                        
                      />
                      <br />
                      <br />
@@ -65,6 +84,7 @@ export default class FormD extends Component {
                         onChange={this.onChange}
                         placeholder='Write origin...'
                         style={styleForm}
+                        required
 
                      />
                      <br />
@@ -75,24 +95,35 @@ export default class FormD extends Component {
                         onChange={this.onChange}
                         placeholder='Write destiny...'
                         style={styleForm}
+                        required
                      />
                      <br />
                      <br />
                      Price:
-              <input type='number'
-                        name='price'
+                     <NumberFormat thousandSeparator={true} prefix={'$'} name='price'
                         onChange={this.onChange}
                         placeholder='Write price...'
                         style={styleForm}
+                        required />
+
+                     <br />
+                     <br />
+                     Quanity:
+                     <input type='number'
+                        name='quantity'
+                        onChange={this.onChange}
+                        placeholder='Write quantity...'
+                        style={styleForm}
+                        required
                      />
-               <Button type='submit'> Enviar</Button> 
+                     <Button type='submit'> Enviar</Button>
                   </form>
                </Modal.Body>
                <Modal.Footer>
                   <Button variant="secondary" onClick={this.handleClose}>
                      Close
         </Button>
-                  
+
                </Modal.Footer>
             </Modal>
          </>
