@@ -1,0 +1,29 @@
+.menuWrapper {
+    height: 50px;
+    width: 100%;
+    background-color: brown;
+    margin-top: 50px;
+}
+
+.menu {
+    display: inline-block;
+    width: 20%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    padding: 10px;
+    vertical-align: middle;
+    align-items: center;
+    cursor: pointer;
+    }
+    .menu:hover{
+        background-color: black;
+        color: white;
+    }
+
+.fa {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 18px;
+}

@@ -1,0 +1,28 @@
+.departure {
+    display: inline-block;
+    width: 20%;
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+    /* margin-top: 20px; */
+    padding: 10px;
+    vertical-align: middle;
+    align-items: center;
+   
+    }
+
+.departureWrap{
+    margin: 0 25px;
+    color: gray;
+}
+
+.fa-chevron-down{
+    font-size: 40px;
+    color: orange;
+}
+.fa-truck{
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    font-size: 60px;
+    color: gray;
+}
