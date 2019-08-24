@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Filters from './Filters'
 import './Sidebar.css'
-import BootstrapSwitchButton from 'bootstrap-switch-button-react'
+
 
 export default class Sidebar extends Component {
     render() {
