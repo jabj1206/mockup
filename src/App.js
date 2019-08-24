@@ -18,7 +18,8 @@ class App extends Component {
         home:true,
         msg: false,
         wish: false
-      }
+      },
+      classN: 'menu'
     }
    
   }
@@ -52,8 +53,10 @@ msg = () =>{
 
 home = () =>{
   let menu= {home:true, msg:false, wish: false}
+  
   this.setState({
-    menu: {...menu}
+    menu: {...menu},
+    classN: this.state.classN + ' ' + 'active'
   })
 }
 
@@ -80,7 +83,7 @@ wishList = () => {
             </Col>
             <Col xs={9}>
             <div className='menuWrapper text-align'>
-                    <div className='menu active' id='home' onClick={this.home}>
+                    <div className='menu' id='home' onClick={this.home}>
                         <div className='icons'><i className="fa fa-home" /></div>
                         Home
                 </div>

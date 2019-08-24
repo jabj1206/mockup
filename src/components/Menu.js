@@ -4,6 +4,7 @@ import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import Departures from './Departures';
 
+
 export default class Menu extends Component {
 
     render() {
@@ -22,6 +23,7 @@ export default class Menu extends Component {
                     <Departures depar={this.props.depar} deleteD={this.props.deleteD} />
                 </Col>
             </Row>
+            
         </>
 
 

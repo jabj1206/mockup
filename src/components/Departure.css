@@ -1,13 +1,11 @@
 .departure {
-    display: inline-block;
-    width: 18%;
+    display: inline-block;    
     height: 100px;
     background-color: rgb(255, 255, 255);
     /* margin-top: 20px; */
     padding: 10px;
     vertical-align: middle;
-    align-items: center;
-    float: none;
+
     
     }
     .departureE {

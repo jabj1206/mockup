@@ -138,5 +138,6 @@ export default class FormD extends Component {
 const styleForm = {
    border: '1px solid gray',
    borderRadius: '10px',
-   marginLeft: '20px'
+   marginLeft: '20px',
+   paddingLeft: '10px'
 }
