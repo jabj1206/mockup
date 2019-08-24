@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Modal } from 'react-bootstrap';
 import { Button } from 'react-bootstrap'
+import { Row } from 'react-bootstrap'
+import { Col } from 'react-bootstrap'
 import NumberFormat from 'react-number-format';
 
 
@@ -59,7 +61,7 @@ export default class FormD extends Component {
       return (
          <>
             <div className='add' onClick={this.handleShow}>
-               <i className="addp fa fa-plus" style={{fontSize: '50px'}}></i>
+               <i className="addp fa fa-plus" style={{ fontSize: '50px' }}></i>
             </div>
 
             <Modal show={this.state.show} onHide={this.handleClose}>
@@ -67,64 +69,99 @@ export default class FormD extends Component {
                   <Modal.Title>Add New Item</Modal.Title>
                </Modal.Header>
                <Modal.Body>
+
                   <form onSubmit={this.onSubmit}>
-                     date:
-              <input type='date'
-                        onChange={this.onChange}
-                        name='date'
-                        style={styleForm}
-                        required
-                        
-                     />
-                     <br />
-                     <br />
-                     Origin:
-              <input type='text'
-                        name='origin'
-                        onChange={this.onChange}
-                        placeholder='Write origin...'
-                        style={styleForm}
-                        required
 
-                     />
-                     <br />
-                     <br />
-                     Destiny:
-              <input type='text'
-                        name='destiny'
-                        onChange={this.onChange}
-                        placeholder='Write destiny...'
-                        style={styleForm}
-                        required
-                     />
-                     <br />
-                     <br />
-                     Price:
-                     <NumberFormat thousandSeparator={true} prefix={'$'} name='price'
-                        onChange={this.onChange}
-                        placeholder='Write price...'
-                        style={styleForm}
-                        required />
+                     <Row>
+                        <Col xs={2}>
+                           Date:
+                     </Col>
+                        <Col>
+                           <input type='date'
+                              onChange={this.onChange}
+                              name='date'
+                              style={styleForm}
+                              required
 
-                     <br />
-                     <br />
-                     Quanity:
-                     <input type='number'
-                        name='quantity'
-                        onChange={this.onChange}
-                        placeholder='Write quantity...'
-                        style={styleForm}
-                        required
-                     />
-                     <Button type='submit'> Enviar</Button>
+                           />
+                           <br />
+                           <br />
+                        </Col>
+                     </Row>
+                     <Row>
+                        <Col xs={2}>
+                           Origin:
+                     </Col>
+                        <Col>
+                           <input type='text'
+                              name='origin'
+                              onChange={this.onChange}
+                              placeholder='Write origin...'
+                              style={styleForm}
+                              required
+
+                           />
+                           <br />
+                           <br />
+                        </Col>
+                     </Row>
+                     <Row>
+                        <Col xs={2}>
+                           Destiny:
+                     </Col>
+                        <Col>
+                           <input type='text'
+                              name='destiny'
+                              onChange={this.onChange}
+                              placeholder='Write destiny...'
+                              style={styleForm}
+                              required
+                           />
+                           <br />
+                           <br />
+                        </Col>
+                     </Row>
+                     <Row>
+                        <Col xs={2}>
+                           Price:
+                     </Col>
+                        <Col>
+                           <NumberFormat thousandSeparator={true} prefix={'$'} name='price'
+                              onChange={this.onChange}
+                              placeholder='Write price...'
+                              style={styleForm}
+                              required />
+
+                           <br />
+                           <br />
+                        </Col>
+                     </Row>
+                     <Row>
+                        <Col xs={2}>
+                           Quantity:
+                     </Col>
+                        <Col>
+                           <input type='number'
+                              name='quantity'
+                              onChange={this.onChange}
+                              placeholder='Write quantity...'
+                              style={styleForm}
+                              required
+                           />
+                        </Col>
+                     </Row>
+                     <Row>
+                        <Col xs={{size: 12, offset: 5}}>
+                           <br/>
+                        <Button type='submit'> Enviar</Button>
+                        </Col>
+                     </Row>
+                     
                   </form>
-               </Modal.Body>
-               <Modal.Footer>
-                  <Button variant="secondary" onClick={this.handleClose}>
-                     Close
-        </Button>
 
-               </Modal.Footer>
+
+               </Modal.Body>
+
             </Modal>
          </>
       )
