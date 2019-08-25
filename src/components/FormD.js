@@ -5,11 +5,12 @@ import { Row } from 'react-bootstrap'
 import { Col } from 'react-bootstrap'
 import NumberFormat from 'react-number-format';
 
-
+const today = new Date()
+const time = today.getHours() + ":" + today.getMinutes()
 
 const initialState = {
-	date: new Date(),
-	time:'',
+	date: formatDate(new Date()),
+	time: time,
 	origin: '',
 	destiny: '',
 	price: '',
@@ -248,3 +249,18 @@ const styleForm = {
 	marginLeft: '20px',
 	paddingLeft: '10px'
 }
+
+function formatDate(date) {
+    let d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    return [year, month, day].join('-');
+}
+
+
+	
