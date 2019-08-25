@@ -1,13 +1,14 @@
 .departure {
-    display: inline-block;    
+    display: inline-block;
     height: 100px;
     background-color: rgb(255, 255, 255);
     /* margin-top: 20px; */
     padding: 10px;
     vertical-align: middle;
 
-    }
-.plane{
+}
+
+.plane {
     display: flex;
     height: 100%;
     flex-direction: column;
@@ -16,26 +17,36 @@
     justify-content: center;
     background-color: white;
 }
-    .departureE {
-        color: red;               
-        }
-
-        .departureE:hover{
-            opacity: 0.7;
-        } 
-        .fa-trash{
-            font-size: 30px;
-            cursor: pointer;
-        }
 
 
-.departureWrap{
-    margin: 0 25px;
-    color: gray;
-    
+.departureE:hover {
+    opacity: 0.7;
 }
 
-.quantity{
+.fa-trash {
+    color: red;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.obj {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+
+.obj:hover{
+    opacity: 0.7;
+}
+
+.departureWrap {
+    margin: 0 25px;
+    color: gray;
+
+}
+
+.quantity {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -49,20 +60,21 @@
     color: white
 }
 
-.price{
+.price {
     font-size: 25px;
 }
 
-.fa-chevron-down{
+.fa-chevron-down {
     font-size: 40px;
     color: orange;
 }
-.fa-truck{
+
+.fa-truck {
     font-size: 60px;
     color: gray;
 }
 
-.fa-check-circle{
+.fa-check-circle {
     font-size: 40px;
     color: orange
 }
