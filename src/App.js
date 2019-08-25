@@ -24,11 +24,11 @@ class App extends Component {
 
   }
 
-  sortt = (sale) => {
-    console.log(sale.sale)
+  sortt = (st) => {
+    console.log(st.date)
     const {depar} = this.state
     let newDepar = depar
-    if (!sale.sale){       
+    if (!st.date){       
     newDepar.sort((a,b)=>(a.date > b.date)?1:-1);
   }else{
     newDepar.sort((a,b)=>(b.date > a.date)?1:-1);

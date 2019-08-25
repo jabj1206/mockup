@@ -7,6 +7,15 @@
     vertical-align: middle;
 
     }
+.plane{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    padding-left: 20px;
+    color: gray;
+    justify-content: center;
+    background-color: white;
+}
     .departureE {
         color: red;               
         }

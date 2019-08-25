@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import './Departure.css'
+import './styles/Departure.css'
 import NumberFormat from 'react-number-format';
-import { Row } from 'react-bootstrap';
-import { Col } from 'react-bootstrap';
 
 export default class Departure extends Component {
   render() {
@@ -16,7 +14,10 @@ export default class Departure extends Component {
           {this.props.departure.date}
           
           </div>
-          <div className='ship' style={styleD}>
+          <div className='plane'>
+          <span ><i className="fa fa-paper-plane-o"/></span>
+          </div>
+          <div className='ship' style={styleD}>            
             <span >{this.props.departure.origin}</span>
             <span><i  className="fa fa-chevron-down"></i></span>
             <span>{this.props.departure.destiny}</span>

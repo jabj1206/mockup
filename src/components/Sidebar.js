@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Filters from './Filters'
-import './Sidebar.css'
+import './styles/Sidebar.css'
 
 
 export default class Sidebar extends Component {

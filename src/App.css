@@ -59,6 +59,7 @@ ul.list li .ship{
   justify-content: center;
   width: 100%;
   background-color: white;
+  color: gray
   
 }
 
@@ -99,10 +100,11 @@ ul.list li .date{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 70%;
   background-color: white;
   border-right: 1px solid silver;
   opacity: 0.8;
+  color: gray;
 
   
 }

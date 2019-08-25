@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import './Filter.css'
+import './styles/Filter.css'
 
 
 export default class Filters extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			sale: true,
-			date: false,
+			sale: false,
+			date: true,
 			wish: false
 		}
 	}

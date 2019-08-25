@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Menu.css'
+import './styles/Menu.css'
 import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import Departures from './Departures';
