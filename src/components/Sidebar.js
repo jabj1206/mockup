@@ -9,7 +9,7 @@ export default class Sidebar extends Component {
             <div className='text-center' style={{ color: 'gray', marginTop: '30px' }}>
                 <img src='https://abeon-hosting.com/images/react-js-png-10.png'
                     alt=' ' style={{ width: '100px' }} />
-                <Filters />
+                <Filters sortt = {this.props.sortt}/>
             </div>
         )
     }

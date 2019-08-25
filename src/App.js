@@ -24,15 +24,36 @@ class App extends Component {
 
   }
 
+  sortt = (sale) => {
+    console.log(sale.sale)
+    const {depar} = this.state
+    let newDepar = depar
+    if (!sale.sale){       
+    newDepar.sort((a,b)=>(a.date > b.date)?1:-1);
+  }else{
+    newDepar.sort((a,b)=>(b.date > a.date)?1:-1);
+  }
+  // this.setState({
+  //    depar: newDepar
+  //  })
+  
+}
+
+shouldComponentUpdate(nextProps, nextState) {
+  return true;
+}
+
+
+
+
   addD = (date, origin, destiny, price, quantity) => {
     const newD = {
+      id: this.state.depar.length,
       date: date,
       origin: origin,
       destiny: destiny,
       price: price,
-      quantity: quantity,
-      id: this.state.depar.length
-
+      quantity: quantity
     }
     this.setState({
       depar: [...this.state.depar, newD]
@@ -69,42 +90,46 @@ class App extends Component {
   }
 
   onChange = e => {
-    console.log(e.target.value)
+    
   }
 
 
   render() {
+   
     return (
       <>
         <Container>
           <Row>
             <Col xs={3}>
-              <Sidebar />
+              <Sidebar sortt = {this.sortt}/>
             </Col>
             <Col xs={9}>
-              <div className='menuWrapper text-align'>
+              <div className='menuWrapper'>
                 <div className='menu' id='home' onClick={this.home}>
-                  <div className='icons'><i className="fa fa-home" /></div>
-                  Home
+                  <span><i className="fa fa-home" /></span>
+                  <span>Home</span>
                 </div>
                 <div className='menu' id='msg' onClick={this.msg}>
-                  <div className='icons'><i className="fa fa-envelope-o"></i></div>
-                  Messages
+                  <span><i className="fa fa-envelope-o"></i></span>
+                  <span>Messages</span>
                 </div>
                 <div className='menu' onClick={this.wishList}>
-                  <div className='icons'><i className="fa fa-star"></i></div>
-                  WishList
+                  <span><i className="fa fa-star"></i></span>
+                  <span>WishList</span>
                 </div>
                 <div className='menu'>
-                  <div className='icons text-justify'><i className="fa fa-cog"></i></div>
-                  Settings
+                  <span><i className="fa fa-cog"></i></span>
+                  <span>Settings</span>
                 </div>
                 <div className='menu'>
-                  <div className='icons'><i className="fa fa-user"></i></div>
-                  My Account
+                  <span><i className="fa fa-user"></i></span>
+                  <span>Account</span>
                 </div>
               </div>
-              <Menu depar={this.state.depar} menu={this.state.menu} deleteD={this.deleteD} />
+              <Menu 
+              depar={this.state.depar} 
+              menu={this.state.menu} 
+              deleteD={this.deleteD} />
               <br />
 
 
@@ -119,20 +144,20 @@ class App extends Component {
 }
 
 const depar = [{
-  id: '0',
+  id: 0,
   date: '2019-01-01',
   origin: 'Bogota',
   destiny: 'Cartagena',
-  price: '250000',
-  quantity: '1'
+  price: 250000,
+  quantity: 1
 },
 {
-  id: '1',
+  id: 1,
   date: '2019-01-01',
   origin: 'Medellin',
   destiny: 'Pereira',
-  price: '100000',
-  quantity: '1'
+  price: 100000,
+  quantity: 2
 }]
 
 

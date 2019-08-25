@@ -76,7 +76,7 @@ export default class FormD extends Component {
 		
 		const isValid = this.Validate()
 		if(isValid){
-			console.log(this.state)
+			
 			this.props.addD(this.state.date, this.state.origin, this.state.destiny, this.state.price, this.state.quantity)
 			this.handleClose()
 			//Clear Form
@@ -87,7 +87,7 @@ export default class FormD extends Component {
 	}
 
 	onChange = e => {
-		console.log(e.target.name, e.target.value)
+		
 		this.setState({
 			[e.target.name]: e.target.value
 		})

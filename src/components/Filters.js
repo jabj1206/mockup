@@ -19,7 +19,7 @@ export default class Filters extends Component {
 				this.setState({
 					sale: !this.state.sale
 				})
-
+				
 				break
 			case 'date':
 				this.setState({
@@ -31,12 +31,15 @@ export default class Filters extends Component {
 					wish: !this.state.wish
 				})
 				break
+			default:
+				break
 		}
-
-
-
+		
+		
 	}
+
 	render() {
+		this.props.sortt(this.state)
 		return (
 			<div className='bor'>
 				<div style={{ marginTop: '60px', marginLeft: '50px', display: 'flex' }}>

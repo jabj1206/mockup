@@ -5,7 +5,11 @@ export default class Departures extends Component {
 
 	render() {
 
-		return this.props.depar.map((departure, i) => <Departure departure={departure} deleteD={this.props.deleteD} key={i} />)
+		return( 
+		<ul className='list'>
+			{this.props.depar.map((departure, i) => <Departure departure={departure} deleteD={this.props.deleteD} key={i} />)}
+		</ul>)
+			
 
 
 	}

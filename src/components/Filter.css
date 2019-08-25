@@ -25,9 +25,16 @@
   border: 1px solid black;
   cursor: pointer;
   border-radius: 50%;
-  position: relative;
+  position: relative;  
   
-  
+}
+
+.inner:hover{
+  opacity: 0.8;
+}
+
+.innerF:hover{
+  opacity: 0.8
 }
 
 .bor{

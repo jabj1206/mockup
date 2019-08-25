@@ -8,8 +8,6 @@
 
     }
     .departureE {
-        display: inline-block;
-        width: 10%;
         color: red;               
         }
 
@@ -29,9 +27,9 @@
 }
 
 .quantity{
-    padding-top: 3px;
-    margin-top: 20px;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 30px;
     height: 30px;
     background-color: rgb(2, 26, 163);
@@ -43,15 +41,6 @@
 }
 
 .price{
-    padding-top: 3px;
-    margin-top: 20px;
-    display: inline-block;
-
-
-    border-radius: 5px;
-    text-align: center;
-    align-items: center;
-    vertical-align: middle;
     font-size: 25px;
 }
 
@@ -60,15 +49,11 @@
     color: orange;
 }
 .fa-truck{
-    display: flex;
-    align-items: center;
-    vertical-align: middle;
     font-size: 60px;
     color: gray;
 }
 
 .fa-check-circle{
     font-size: 40px;
-    margin-top: 50px;
     color: orange
 }
