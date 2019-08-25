@@ -15,59 +15,59 @@ class App extends Component {
       show: false,
       depar: depar,
       menu: {
-        home:true,
+        home: true,
         msg: false,
         wish: false
       },
       classN: 'menu'
     }
-   
-  }
-
-addD=(date,origin,destiny,price, quantity)=>{
-  const newD = {
-    date: date,
-    origin: origin,
-    destiny: destiny,
-    price: price,
-    quantity: quantity,
-    id: this.state.depar.length
 
   }
-  this.setState({
-    depar: [...this.state.depar, newD]
-  })
-}
 
-deleteD= (id) =>{
-  const deleteD = this.state.depar.filter(d => d.id !== id)
-  this.setState({depar: deleteD})
-}
+  addD = (date, origin, destiny, price, quantity) => {
+    const newD = {
+      date: date,
+      origin: origin,
+      destiny: destiny,
+      price: price,
+      quantity: quantity,
+      id: this.state.depar.length
 
-msg = () =>{
-  let menu= {home:false, msg:true, wish: false}
-  this.setState({
-    menu: {...menu}
-  })
-}
+    }
+    this.setState({
+      depar: [...this.state.depar, newD]
+    })
+  }
 
-home = () =>{
-  let menu= {home:true, msg:false, wish: false}
-  
-  this.setState({
-    menu: {...menu},
-    classN: `${this.state.classN} active'`
-  })
-}
+  deleteD = (id) => {
+    const deleteD = this.state.depar.filter(d => d.id !== id)
+    this.setState({ depar: deleteD })
+  }
 
-wishList = () => {
-  let menu= {home:false, msg:false, wish: true}
-  this.setState({
-    menu: {...menu}
-  })
+  msg = () => {
+    let menu = { home: false, msg: true, wish: false }
+    this.setState({
+      menu: { ...menu }
+    })
+  }
 
-}
-  
+  home = () => {
+    let menu = { home: true, msg: false, wish: false }
+
+    this.setState({
+      menu: { ...menu },
+      classN: `${this.state.classN} active'`
+    })
+  }
+
+  wishList = () => {
+    let menu = { home: false, msg: false, wish: true }
+    this.setState({
+      menu: { ...menu }
+    })
+
+  }
+
   onChange = e => {
     console.log(e.target.value)
   }
@@ -82,37 +82,37 @@ wishList = () => {
               <Sidebar />
             </Col>
             <Col xs={9}>
-            <div className='menuWrapper text-align'>
-                    <div className='menu' id='home' onClick={this.home}>
-                        <div className='icons'><i className="fa fa-home" /></div>
-                        Home
+              <div className='menuWrapper text-align'>
+                <div className='menu' id='home' onClick={this.home}>
+                  <div className='icons'><i className="fa fa-home" /></div>
+                  Home
                 </div>
-                    <div className='menu' id='msg' onClick={this.msg}>
-                        <div className='icons'><i className="fa fa-envelope-o"></i></div>
-                        Messages
+                <div className='menu' id='msg' onClick={this.msg}>
+                  <div className='icons'><i className="fa fa-envelope-o"></i></div>
+                  Messages
                 </div>
-                    <div className='menu' onClick={this.wishList}>
-                        <div className='icons'><i className="fa fa-star"></i></div>
-                        WishList
+                <div className='menu' onClick={this.wishList}>
+                  <div className='icons'><i className="fa fa-star"></i></div>
+                  WishList
                 </div>
-                    <div className='menu'>
-                        <div className='icons text-justify'><i className="fa fa-cog"></i></div>
-                        Settings
+                <div className='menu'>
+                  <div className='icons text-justify'><i className="fa fa-cog"></i></div>
+                  Settings
                 </div>
-                    <div className='menu'>
-                        <div className='icons'><i className="fa fa-user"></i></div>
-                        My Account
+                <div className='menu'>
+                  <div className='icons'><i className="fa fa-user"></i></div>
+                  My Account
                 </div>
-                </div>
-              <Menu depar={this.state.depar} menu={this.state.menu} deleteD = {this.deleteD}/>
+              </div>
+              <Menu depar={this.state.depar} menu={this.state.menu} deleteD={this.deleteD} />
               <br />
 
-              
+
             </Col>
 
           </Row>
         </Container>
-        <FormD addD={this.addD}/>        
+        <FormD addD={this.addD} />
       </>
     )
   }
