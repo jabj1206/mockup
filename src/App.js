@@ -6,6 +6,7 @@ import { Col } from 'react-bootstrap';
 import Menu from './components/Menu';
 import Sidebar from './components/Sidebar'
 import FormD from './components/FormD'
+import 'moment-timezone';
 
 
 class App extends Component {
@@ -39,17 +40,16 @@ class App extends Component {
   
 }
 
-shouldComponentUpdate(nextProps, nextState) {
-  return true;
-}
 
 
 
 
-  addD = (date, origin, destiny, price, quantity) => {
+
+  addD = (date, time, origin, destiny, price, quantity) => {
     const newD = {
       id: this.state.depar.length,
       date: date,
+      time: time,
       origin: origin,
       destiny: destiny,
       price: price,
@@ -146,6 +146,7 @@ shouldComponentUpdate(nextProps, nextState) {
 const depar = [{
   id: 0,
   date: '2019-01-01',
+  time: '19:34',
   origin: 'Bogota',
   destiny: 'Cartagena',
   price: 250000,
@@ -154,6 +155,7 @@ const depar = [{
 {
   id: 1,
   date: '2019-01-01',
+  time: '20:00',
   origin: 'Medellin',
   destiny: 'Pereira',
   price: 100000,

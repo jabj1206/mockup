@@ -4,11 +4,12 @@ import { Button } from 'react-bootstrap'
 import { Row } from 'react-bootstrap'
 import { Col } from 'react-bootstrap'
 import NumberFormat from 'react-number-format';
-import TextField from '@material-ui/core/TextField';
+
 
 
 const initialState = {
 	date: new Date(),
+	time:'',
 	origin: '',
 	destiny: '',
 	price: '',
@@ -78,7 +79,7 @@ export default class FormD extends Component {
 		const isValid = this.Validate()
 		if (isValid) {
 
-			this.props.addD(this.state.date, this.state.origin, this.state.destiny, this.state.price, this.state.quantity)
+			this.props.addD(this.state.date, this.state.time,this.state.origin, this.state.destiny, this.state.price, this.state.quantity)
 			this.handleClose()
 			//Clear Form
 			this.setState(initialState)
@@ -87,13 +88,10 @@ export default class FormD extends Component {
 
 	}
 
-	onChangeDate = e => {
-		console.log(e.target)
-		this.setState({ date: e })
-	}
+
 
 	onChange = e => {
-
+		console.log(e.target.value)
 		this.setState({
 			[e.target.name]: e.target.value
 		})
@@ -142,19 +140,11 @@ export default class FormD extends Component {
 									Hour:
 								</Col>
 								<Col xs={6}>
-									<TextField
-										id="time"
-										name='hour'
-										onChange ={this.onChangeDate}
-										type="time"
-										defaultValue="07:30"
-										InputLabelProps={{
-											shrink: true,
-										}}
-										inputProps={{
-											step: 300, // 5 min
-										}}
+								<input type='time'
+										onChange={this.onChange}
+										name='time'
 										style={styleForm}
+										value={this.state.time}
 									/>
 									<br />
 									<br />
