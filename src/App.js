@@ -56,7 +56,7 @@ home = () =>{
   
   this.setState({
     menu: {...menu},
-    classN: this.state.classN + ' ' + 'active'
+    classN: `${this.state.classN} active'`
   })
 }
 
@@ -121,17 +121,17 @@ wishList = () => {
 const depar = [{
   id: '0',
   date: '2019-01-01',
-  origin: 'Houston',
-  destiny: 'Texas',
+  origin: 'Bogota',
+  destiny: 'Cartagena',
   price: '250000',
   quantity: '1'
 },
 {
   id: '1',
   date: '2019-01-01',
-  origin: 'Houston',
-  destiny: 'Texas',
-  price: '250000',
+  origin: 'Medellin',
+  destiny: 'Pereira',
+  price: '100000',
   quantity: '1'
 }]
 

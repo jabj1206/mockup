@@ -6,7 +6,6 @@
     padding: 10px;
     vertical-align: middle;
 
-    
     }
     .departureE {
         display: inline-block;
@@ -66,4 +65,10 @@
     vertical-align: middle;
     font-size: 60px;
     color: gray;
+}
+
+.fa-check-circle{
+    font-size: 40px;
+    margin-top: 50px;
+    color: orange
 }
