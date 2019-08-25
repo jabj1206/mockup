@@ -39,7 +39,7 @@ export default class Filters extends Component {
 	}
 
 	render() {
-		this.props.sortt(this.state)
+		// this.props.sortt(this.state)
 		return (
 			<div className='bor'>
 				<div style={{ marginTop: '60px', marginLeft: '50px', display: 'flex' }}>
