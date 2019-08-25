@@ -21,7 +21,8 @@ class App extends Component {
         msg: false,
         wish: false
       },
-      classN: 'menu'
+      classN: 'menu',
+      addClass: false
     }
 
   }
@@ -40,10 +41,6 @@ class App extends Component {
   //  })
   
 }
-
-
-
-
 
 
   addD = (date, time, origin, destiny, price, quantity) => {
@@ -78,7 +75,7 @@ class App extends Component {
 
     this.setState({
       menu: { ...menu },
-      classN: `${this.state.classN} active'`
+      addClass: !this.state.addClass
     })
   }
 
@@ -96,7 +93,10 @@ class App extends Component {
 
 
   render() {
-   
+    let boxClass = ["menu"];
+    if(this.state.addClass) {
+      boxClass.push('active');
+    }
     return (
       <>
         <Container>
@@ -106,7 +106,7 @@ class App extends Component {
             </Col>
             <Col xs={9}>
               <div className='menuWrapper'>
-                <div className='menu' id='home' onClick={this.home}>
+                <div className={boxClass.join(' ')} id='home' onClick={this.home}>
                   <span><i className="fa fa-home" /></span>
                   <span>Home</span>
                 </div>

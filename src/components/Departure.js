@@ -69,7 +69,7 @@ export default class Departure extends Component {
           <div className=' small rightborder '>
             <Dropdown>
               <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
-                <i style={{fontSize: 25}} class="fa fa-ellipsis-v"></i>
+                <i style={{fontSize: 25}} className="fa fa-ellipsis-v"></i>
               </Dropdown.Toggle>
 
               <Dropdown.Menu >
@@ -77,7 +77,7 @@ export default class Departure extends Component {
                   onClick={this.props.deleteD.bind(this, this.props.departure.id)}>
                   <span className='obj'><i className="departureE fa fa-trash"></i>&nbsp;Delete</span>
                 </Dropdown.Item>
-                <Dropdown.Item eventKey="2"><span className='obj'><i class="fa fa-pencil-square-o"/>&nbsp;Edit</span></Dropdown.Item>
+                <Dropdown.Item eventKey="2"><span className='obj'><i className="fa fa-pencil-square-o"/>&nbsp;Edit</span></Dropdown.Item>
 
               </Dropdown.Menu>
             </Dropdown>

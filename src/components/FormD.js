@@ -5,12 +5,12 @@ import { Row } from 'react-bootstrap'
 import { Col } from 'react-bootstrap'
 import NumberFormat from 'react-number-format';
 
-const today = new Date()
-const time = today.getHours() + ":" + today.getMinutes()
+
+
 
 const initialState = {
-	date: formatDate(new Date()),
-	time: time,
+	date: formatDate(new Date()),	
+	time: formatTime(new Date()),
 	origin: '',
 	destiny: '',
 	price: '',
@@ -25,6 +25,7 @@ const initialState = {
 
 export default class FormD extends Component {
 	constructor(props) {
+		console.log(formatTime(new Date()))
 		super(props)
 		this.state = initialState
 	}
@@ -141,6 +142,7 @@ export default class FormD extends Component {
 									Hour:
 								</Col>
 								<Col xs={6}>
+									
 								<input type='time'
 										onChange={this.onChange}
 										name='time'
@@ -199,6 +201,7 @@ export default class FormD extends Component {
 										placeholder='Write price...'
 										style={styleForm}
 										value={this.state.price}
+										
 									/>
 
 									<br />
@@ -260,6 +263,10 @@ function formatDate(date) {
     if (day.length < 2) day = '0' + day;
 
     return [year, month, day].join('-');
+}
+
+function formatTime(date){
+	return date.getHours() + ":" + date.getMinutes()
 }
 
 
