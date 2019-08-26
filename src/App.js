@@ -15,6 +15,7 @@ class App extends Component {
     super(props)
     this.state = {
       show: false,
+      sortByDate: false,
       depar: depar,
       menu: {
         home: true,
@@ -27,18 +28,24 @@ class App extends Component {
 
   }
 
-  sortt = (st) => {
-    console.log(st.date)
+
+
+  static shouldComponentUpdate() {
+    return true;
+  }
+
+  sortt = (st) => { 
+   
     const {depar} = this.state
     let newDepar = depar
-    if (!st.date){       
+    if (st.sale){       
     newDepar.sort((a,b)=>(a.date > b.date)?1:-1);
   }else{
     newDepar.sort((a,b)=>(b.date > a.date)?1:-1);
   }
-  // this.setState({
-  //    depar: newDepar
-  //  })
+  this.setState({
+     depar: newDepar
+   })
   
 }
 
@@ -93,6 +100,7 @@ class App extends Component {
 
 
   render() {
+    
     let boxClass = ["menu"];
     if(this.state.addClass) {
       boxClass.push('active');

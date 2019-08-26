@@ -3,7 +3,7 @@ import './styles/Departure.css'
 import NumberFormat from 'react-number-format';
 import Moment from 'react-moment';
 import 'moment-timezone';
-import { DropdownButton, Dropdown } from 'react-bootstrap'
+import {  Dropdown } from 'react-bootstrap'
 
 class CustomToggle extends React.Component {
   constructor(props, context) {
