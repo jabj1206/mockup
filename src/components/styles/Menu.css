@@ -37,7 +37,7 @@ div.menu span{
     cursor: pointer;
     }
     .menu:hover{
-        background-color: black;
+        background-color: rgb(2, 49, 47);
         color: white;
     }
 
