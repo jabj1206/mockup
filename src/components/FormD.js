@@ -119,12 +119,13 @@ export default class FormD extends Component {
 
 							<Row>
 								<Col xs={2}>
-									Date:
+									<label htmlFor='date'>Date:</label>
                      			</Col>
 
 								<Col xs={6}>
 									<input type='date'
 										onChange={this.onChange}
+										id='date'
 										name='date'
 										style={styleForm}
 										value={this.state.date}
@@ -139,12 +140,13 @@ export default class FormD extends Component {
 							</Row>
 							<Row>
 								<Col xs={2}>
-									Hour:
+									<label htmlFor='hour'>Hour:</label>
 								</Col>
 								<Col xs={6}>
 									
 								<input type='time'
 										onChange={this.onChange}
+										id='hour'
 										name='time'
 										style={styleForm}
 										value={this.state.time}
@@ -155,11 +157,12 @@ export default class FormD extends Component {
 							</Row>
 							<Row>
 								<Col xs={2}>
-									Origin:
+									<label htmlFor='origin'>Origin:</label>
                      			</Col>
 								<Col xs={6}>
 									<input type='text'
 										name='origin'
+										id='origin'
 										onChange={this.onChange}
 										placeholder='Write origin...'
 										style={styleForm}
@@ -174,10 +177,11 @@ export default class FormD extends Component {
 							</Row>
 							<Row>
 								<Col xs={2}>
-									Destiny:
+									<label htmlFor='destiny'>Destiny:</label>
                      			</Col>
 								<Col xs={6}>
 									<input type='text'
+										id='destiny'
 										name='destiny'
 										onChange={this.onChange}
 										placeholder='Write destiny...'
@@ -193,10 +197,12 @@ export default class FormD extends Component {
 							</Row>
 							<Row>
 								<Col xs={2}>
-									Price:
+									<label htmlFor='price'>Price:</label>
                      			</Col>
 								<Col xs={6}>
-									<NumberFormat thousandSeparator={true} prefix={'$'} name='price'
+									<NumberFormat thousandSeparator={true} prefix={'$'} 
+										id='price'
+										name='price'
 										onChange={this.onChange}
 										placeholder='Write price...'
 										style={styleForm}
@@ -213,10 +219,11 @@ export default class FormD extends Component {
 							</Row>
 							<Row>
 								<Col xs={2}>
-									Quantity:
+									<label htmlFor='quantity'>Quantity:</label>
                      			</Col>
 								<Col xs={6}>
 									<input type='number'
+										id='quantity'
 										name='quantity'
 										onChange={this.onChange}
 										placeholder='Write quantity...'
