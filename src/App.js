@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Router, Route, browserHistory } from 'react-router';
 import './App.css';
 import { Container } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
@@ -7,6 +8,7 @@ import Menu from './components/Menu';
 import Sidebar from './components/Sidebar'
 import FormD from './components/FormD'
 import 'moment-timezone';
+import Settings from './components/Settings'
 
   
 
@@ -115,24 +117,24 @@ class App extends Component {
             <Col xs={9}>
               <div className='menuWrapper'>
                 <div className={boxClass.join(' ')} id='home' onClick={this.home}>
-                  <span><i className="fa fa-home" /></span>
-                  <span>Home</span>
+                  <span><i style={{fontSize: '25px'}} className="fa fa-home" /></span>
+                  <span style={{fontSize: '14px'}}>Home</span>
                 </div>
                 <div className='menu' id='msg' onClick={this.msg}>
-                  <span><i className="fa fa-envelope-o"></i></span>
-                  <span>Messages</span>
+                  <span><i style={{fontSize: '25px'}} className="fa fa-envelope-o"></i></span>
+                  <span style={{fontSize: '14px'}}>Messages</span>
                 </div>
                 <div className='menu' onClick={this.wishList}>
-                  <span><i className="fa fa-star"></i></span>
-                  <span>WishList</span>
+                  <span ><i style={{fontSize: '25px'}} className="fa fa-star"></i></span>
+                  <span style={{fontSize: '14px'}}>WishList</span>
                 </div>
                 <div className='menu'>
-                  <span><i className="fa fa-cog"></i></span>
-                  <span>Settings</span>
+                  <span ><i style={{fontSize: '25px'}} className="fa fa-cog"></i></span>
+                  <span style={{fontSize: '14px'}}>Settings</span>
                 </div>
                 <div className='menu'>
-                  <span><i className="fa fa-user"></i></span>
-                  <span>Account</span>
+                  <span><i style={{fontSize: '25px'}} className="fa fa-user"></i></span>
+                  <span style={{fontSize: '14px'}}>Account</span>
                 </div>
               </div>
               <Menu 

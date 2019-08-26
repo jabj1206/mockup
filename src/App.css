@@ -66,6 +66,7 @@ ul.list li .icon{
 }
 
 ul.list li .ship{
+  font-size: 14px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -119,6 +120,7 @@ ul.list li .date{
   border-right: 1px solid silver;
   opacity: 0.8;
   color: gray;
+  font-size: 14px;
 
   
 }
