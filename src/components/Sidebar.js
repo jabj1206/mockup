@@ -9,7 +9,7 @@ export default class Sidebar extends Component {
         return (
             <div className='text-center' style={{ color: 'gray', marginTop: '30px' }}>
                 <img src={logo} className="App-logo" alt="logo" 
-                     style={{ width: '100px' }} />
+                     style={{ width: '150px' }} />
                 <Filters sortt = {this.props.sortt}/>
             </div>
         )
