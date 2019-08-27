@@ -7,6 +7,7 @@ import Menu from "./components/Menu";
 import Sidebar from "./components/Sidebar";
 import FormD from "./components/FormD";
 import "moment-timezone";
+import { Link } from "react-router-dom";
 
 class App extends Component {
   constructor(props) {
@@ -15,11 +16,6 @@ class App extends Component {
       show: false,
       sortByDate: false,
       depar: depar,
-      menu: {
-        home: true,
-        msg: false,
-        wish: false
-      },
       classN: "menu",
       addClass: false
     };
@@ -62,31 +58,6 @@ class App extends Component {
     this.setState({ depar: deleteD });
   };
 
-  msg = () => {
-    let menu = { home: false, msg: true, wish: false };
-    this.setState({
-      menu: { ...menu }
-    });
-  };
-
-  home = () => {
-    let menu = { home: true, msg: false, wish: false };
-
-    this.setState({
-      menu: { ...menu },
-      addClass: !this.state.addClass
-    });
-  };
-
-  wishList = () => {
-    let menu = { home: false, msg: false, wish: true };
-    this.setState({
-      menu: { ...menu }
-    });
-  };
-
-  onChange = e => {};
-
   render() {
     let boxClass = ["menu"];
     if (this.state.addClass) {
@@ -101,17 +72,27 @@ class App extends Component {
             </Col>
             <Col xs={9}>
               <div className="menuWrapper">
-                <div
+                <Link
+                  to="/"
+                  style={styleLink}
                   className={boxClass.join(" ")}
                   id="home"
-                  onClick={this.home}
                 >
                   <span>
-                    <i style={{ fontSize: "25px" }} className="fa fa-home" />
+                    <i
+                      style={{ fontSize: "25px" }}
+                      
+                      className="fa fa-home"
+                    />
                   </span>
                   <span style={{ fontSize: "14px" }}>Home</span>
-                </div>
-                <div className="menu" id="msg" onClick={this.msg}>
+                </Link>
+                <Link
+                  to="/messages"
+                  style={styleLink}
+                  className="menu"
+                  id="msg"
+                >
                   <span>
                     <i
                       style={{ fontSize: "25px" }}
@@ -119,20 +100,28 @@ class App extends Component {
                     ></i>
                   </span>
                   <span style={{ fontSize: "14px" }}>Messages</span>
-                </div>
-                <div className="menu" onClick={this.wishList}>
+                </Link>
+                <Link
+                  to="wish-list"
+                  style={styleLink}
+                  className="menu"
+                >
                   <span>
                     <i style={{ fontSize: "25px" }} className="fa fa-star"></i>
                   </span>
                   <span style={{ fontSize: "14px" }}>WishList</span>
-                </div>
-                <div className="menu">
+                </Link>
+                <Link
+                  to="settings"
+                  style={styleLink}
+                  className="menu"
+                >
                   <span>
                     <i style={{ fontSize: "25px" }} className="fa fa-cog"></i>
                   </span>
                   <span style={{ fontSize: "14px" }}>Settings</span>
-                </div>
-                <div className="menu">
+                </Link>
+                <div style={{ textDecoration: "none" }} className="menu">
                   <span>
                     <i style={{ fontSize: "25px" }} className="fa fa-user"></i>
                   </span>
@@ -183,5 +172,7 @@ const depar = [
     quantity: 2
   }
 ];
+
+const styleLink = { textDecoration: "none", color: 'inherit' }
 
 export default App;

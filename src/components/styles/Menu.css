@@ -21,6 +21,7 @@ div.menu span{
     align-items: center;
     justify-content: center;
     margin-right: 15px;
+    
   }
 
 
@@ -35,10 +36,15 @@ div.menu span{
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    text-decoration: none;
     }
+.menu:link{
+    text-decoration: none;
+}
     .menu:hover{
         background-color: rgb(2, 49, 47);
         color: white;
+        text-decoration: none;
     }
 
 .fa {
