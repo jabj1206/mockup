@@ -37,6 +37,7 @@ div.menu span{
     justify-content: center;
     cursor: pointer;
     text-decoration: none;
+    color: black;
     }
 .menu:link{
     text-decoration: none;

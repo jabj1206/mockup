@@ -74,7 +74,7 @@ class App extends Component {
               <div className="menuWrapper">
                 <Link
                   to="/"
-                  style={styleLink}
+                  
                   className={boxClass.join(" ")}
                   id="home"
                 >
@@ -89,7 +89,7 @@ class App extends Component {
                 </Link>
                 <Link
                   to="/messages"
-                  style={styleLink}
+                  
                   className="menu"
                   id="msg"
                 >
@@ -103,7 +103,7 @@ class App extends Component {
                 </Link>
                 <Link
                   to="wish-list"
-                  style={styleLink}
+                  
                   className="menu"
                 >
                   <span>
@@ -113,7 +113,7 @@ class App extends Component {
                 </Link>
                 <Link
                   to="settings"
-                  style={styleLink}
+                  
                   className="menu"
                 >
                   <span>
@@ -173,6 +173,6 @@ const depar = [
   }
 ];
 
-const styleLink = { textDecoration: "none", color: 'inherit' }
+const styleLink = { textDecoration: "none" }
 
 export default App;
