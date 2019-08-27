@@ -72,27 +72,13 @@ class App extends Component {
             </Col>
             <Col xs={9}>
               <div className="menuWrapper">
-                <Link
-                  to="/"
-                  
-                  className={boxClass.join(" ")}
-                  id="home"
-                >
+                <Link to="/" className={boxClass.join(" ")} id="home">
                   <span>
-                    <i
-                      style={{ fontSize: "25px" }}
-                      
-                      className="fa fa-home"
-                    />
+                    <i style={{ fontSize: "25px" }} className="fa fa-home" />
                   </span>
                   <span style={{ fontSize: "14px" }}>Home</span>
                 </Link>
-                <Link
-                  to="/messages"
-                  
-                  className="menu"
-                  id="msg"
-                >
+                <Link to="/messages" className="menu" id="msg">
                   <span>
                     <i
                       style={{ fontSize: "25px" }}
@@ -101,21 +87,13 @@ class App extends Component {
                   </span>
                   <span style={{ fontSize: "14px" }}>Messages</span>
                 </Link>
-                <Link
-                  to="wish-list"
-                  
-                  className="menu"
-                >
+                <Link to="wish-list" className="menu">
                   <span>
                     <i style={{ fontSize: "25px" }} className="fa fa-star"></i>
                   </span>
                   <span style={{ fontSize: "14px" }}>WishList</span>
                 </Link>
-                <Link
-                  to="settings"
-                  
-                  className="menu"
-                >
+                <Link to="settings" className="menu">
                   <span>
                     <i style={{ fontSize: "25px" }} className="fa fa-cog"></i>
                   </span>
@@ -172,7 +150,5 @@ const depar = [
     quantity: 2
   }
 ];
-
-const styleLink = { textDecoration: "none" }
 
 export default App;

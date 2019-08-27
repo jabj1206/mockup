@@ -20,9 +20,9 @@ class CustomToggle extends React.Component {
 
   render() {
     return (
-      <a href="" style={{ textDecoration: 'none', color: 'gray' }} onClick={this.handleClick}>
+      <div style={{ textDecoration: 'none', color: 'gray', cursor: 'pointer' }} onClick={this.handleClick}>
         {this.props.children}
-      </a>
+      </div>
     );
   }
 }
