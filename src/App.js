@@ -99,12 +99,12 @@ class App extends Component {
                   </span>
                   <span style={{ fontSize: "14px" }}>Settings</span>
                 </Link>
-                <div style={{ textDecoration: "none" }} className="menu">
+                <Link to='/account' style={{ textDecoration: "none" }} className="menu">
                   <span>
                     <i style={{ fontSize: "25px" }} className="fa fa-user"></i>
                   </span>
                   <span style={{ fontSize: "14px" }}>Account</span>
-                </div>
+                </Link>
               </div>
               <Menu
                 depar={this.state.depar}
