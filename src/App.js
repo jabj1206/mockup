@@ -65,10 +65,6 @@ class App extends Component {
     }
   };
 
-  _handleClickChild = e => {
-    e.preventDefault();
-    e.stopPropagation();
-  };
 
   render() {
     console.log(this.state.tab);
