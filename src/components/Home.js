@@ -12,9 +12,12 @@ class Home extends Component {
     const { search } = this.state;
     const lowercasedFilter = search.toLowerCase();
     const filteredData = this.props.depar.filter(item => {
-      return item['origin'].toLowerCase().includes(lowercasedFilter) || item['destiny'].toLowerCase().includes(lowercasedFilter)
+      return (
+        item["origin"].toLowerCase().includes(lowercasedFilter) ||
+        item["destiny"].toLowerCase().includes(lowercasedFilter)
+      );
     });
-
+    console.log(filteredData.length);
     return (
       <>
         <br />
@@ -32,7 +35,13 @@ class Home extends Component {
 
         <Row>
           <Col xs={12}>
-            <Departures depar={filteredData} deleteD={this.props.deleteD} />
+            {filteredData.length > 0 ? (
+              <Departures depar={filteredData} deleteD={this.props.deleteD} />
+            ) : (
+              <h3 className="text-center" style={{ marginTop: "100px" }}>
+                No Results =(
+              </h3>
+            )}
           </Col>
         </Row>
       </>
