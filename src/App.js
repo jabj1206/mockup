@@ -17,7 +17,8 @@ class App extends Component {
       sortByDate: false,
       depar: depar,
       classN: "menu",
-      addClass: false
+      addClass: false,
+      tab: "home"
     };
   }
 
@@ -58,11 +59,19 @@ class App extends Component {
     this.setState({ depar: deleteD });
   };
 
-  render() {
-    let boxClass = ["menu"];
-    if (this.state.addClass) {
-      boxClass.push("active");
+  _handleClick = e => {
+    if (!e.currentTarget.classList.contains("active")) {
+      this.setState({ tab: e.currentTarget.id });
     }
+  };
+
+  _handleClickChild = e => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
+  render() {
+    console.log(this.state.tab);
     return (
       <>
         <Container>
@@ -72,13 +81,23 @@ class App extends Component {
             </Col>
             <Col xs={9}>
               <div className="menuWrapper">
-                <Link to="/" className={boxClass.join(" ")} id="home">
+                <Link
+                  to="/"
+                  className={this.state.tab === "home" ? "menu active" : "menu"}
+                  id="home"
+                  onClick={this._handleClick}
+                >
                   <span>
                     <i style={{ fontSize: "25px" }} className="fa fa-home" />
                   </span>
                   <span style={{ fontSize: "14px" }}>Home</span>
                 </Link>
-                <Link to="/messages" className="menu" id="msg">
+                <Link
+                  to="/messages"
+                  className={this.state.tab === "msg" ? "menu active" : "menu"}
+                  id="msg"
+                  onClick={this._handleClick}
+                >
                   <span>
                     <i
                       style={{ fontSize: "25px" }}
@@ -87,19 +106,36 @@ class App extends Component {
                   </span>
                   <span style={{ fontSize: "14px" }}>Messages</span>
                 </Link>
-                <Link to="wish-list" className="menu">
+                <Link
+                  to="wish-list"
+                  className={this.state.tab === "wish" ? "menu active" : "menu"}
+                  id="wish"
+                  onClick={this._handleClick}
+                >
                   <span>
                     <i style={{ fontSize: "25px" }} className="fa fa-star"></i>
                   </span>
                   <span style={{ fontSize: "14px" }}>WishList</span>
                 </Link>
-                <Link to="settings" className="menu">
+                <Link
+                  to="settings"
+                  className={
+                    this.state.tab === "settings" ? "menu active" : "menu"
+                  }
+                  id="settings"
+                  onClick={this._handleClick}
+                >
                   <span>
                     <i style={{ fontSize: "25px" }} className="fa fa-cog"></i>
                   </span>
                   <span style={{ fontSize: "14px" }}>Settings</span>
                 </Link>
-                <Link to='/account' style={{ textDecoration: "none" }} className="menu">
+                <Link
+                  to="/account"
+                  className={this.state.tab === "user" ? "menu active" : "menu"}
+                  id="user"
+                  onClick={this._handleClick}
+                >
                   <span>
                     <i style={{ fontSize: "25px" }} className="fa fa-user"></i>
                   </span>

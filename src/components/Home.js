@@ -3,6 +3,7 @@ import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import Departures from "./Departures";
 
+
 class Home extends Component {
   state = { search: "" };
   _handleChange = e => {
